@@ -24,17 +24,17 @@ $(call inherit-product, device/oneplus/fajita/device.mk)
 # Inherit some common CherishOS stuff.
 $(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
-
 # Boot Animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
-# Gapps
+# Gapps & CherishOS Stuff
 TARGET_GAPPS_ARCH := arm64
 TARGET_INCLUDE_WIFI_EXT := true
 CHERISH_WITHGAPPS := true
-
-#No Gapps
 #CHERISH_NONGAPPS := true
+
+# FOD animations
+TARGET_WANTS_FOD_ANIMATIONS := true
 
 # Official
 CHERISH_BUILD_TYPE:= OFFICIAL
