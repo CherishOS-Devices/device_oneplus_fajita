@@ -21,37 +21,29 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from fajita device
 $(call inherit-product, device/oneplus/fajita/device.mk)
 
-# Inherit some common PalladiumOS stuff.
-$(call inherit-product, vendor/palladium/config/common_full_phone.mk)
-
-# Official
-PALLADIUM_BUILD_TYPE := OFFICIAL
+# Inherit some common Cherish OS stuff.
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 # Boot Animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
-# Gapps
-ifeq ($(with_gapps), yes)
-PALLADIUM_BUILD_VARIANT := GAPPS
+# FOD animations
+TARGET_WANTS_FOD_ANIMATIONS := true
+
+# Gapps & CherishOS Stuff
 TARGET_GAPPS_ARCH := arm64
-TARGET_INCLUDE_STOCK_ARCORE := true
-TARGET_SUPPORTS_GOOGLE_RECORDER := false
-endif
+TARGET_INCLUDE_WIFI_EXT := true
+WITH_GMS := true
 
-# FOD Animation
-EXTRA_FOD_ANIMATIONS := true
+# Official
+CHERISH_BUILD_TYPE := OFFICIAL
 
-# Maintainer & Device Props
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.palladiumdevice.maintainer=Durgesh33 \
-    ro.palladiumdevice.cpu=SDM845\
-    ro.palladiumdevice.display=6.41 \
-    ro.palladiumdevice.displaytype=Optic.AMOLED \
-    ro.palladiumdevice.battery=3700mAh \
-    ro.palladiumdevice.camera=16MP+20MP
+# Maintainer
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.cherish.maintainer=ZahidM Choudhry
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := palladium_fajita
+PRODUCT_NAME := cherish_fajita
 PRODUCT_DEVICE := fajita
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
@@ -61,7 +53,4 @@ PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE=OnePlus6T \
-    PRODUCT_NAME=OnePlus6T \
-    PRIVATE_BUILD_DESC="coral-user 11 RQ3A.210805.001.A1 7474174 release-keys"
-
-BUILD_FINGERPRINT := google/coral/coral:11/RQ3A.210805.001.A1/7474174:user/release-keys
+    PRODUCT_NAME=OnePlus6T

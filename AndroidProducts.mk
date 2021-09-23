@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/palladium_fajita.mk
+    $(LOCAL_DIR)/cherish_fajita.mk
 
 COMMON_LUNCH_CHOICES := \
-    palladium_fajita-user \
-    palladium_fajita-userdebug \
-    palladium_fajita-eng
+    cherish_fajita-user \
+    cherish_fajita-userdebug \
+    cherish_fajita-eng
