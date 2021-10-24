@@ -20,10 +20,7 @@
 DEVICE_PATH := device/oneplus/fajita
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := OnePlus6T
-
-# Kernel
-TARGET_KERNEL_CONFIG := kronic_defconfig
+TARGET_OTA_ASSERT_DEVICE := OnePlus6T,oneplus6t,fajita
 
 # FOD
 TARGET_SURFACEFLINGER_FOD_LIB := //$(DEVICE_PATH):libfod_extension.oneplus_fajita
